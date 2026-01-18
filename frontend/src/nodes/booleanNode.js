@@ -1,29 +1,27 @@
-// textNode.js
-
 import { useState } from 'react';
 import { Position } from 'reactflow';
 import { BaseNode } from './baseNode';
 
-export const TextNode = ({ id, data }) => {
-  const [currText, setCurrText] = useState(data?.text || '{{input}}');
+export const BooleanNode = ({ id, data }) => {
+  const [enabled, setEnabled] = useState(data?.enabled ?? false);
 
   return (
     <BaseNode
-      title="Text"
+      title="Boolean"
       handles={[
         {
           type: 'source',
           position: Position.Right,
-          id: `${id}-output`,
+          id: `${id}-bool`,
         },
       ]}
     >
       <label>
-        Text:
+        Enabled:
         <input
-          type="text"
-          value={currText}
-          onChange={(e) => setCurrText(e.target.value)}
+          type="checkbox"
+          checked={enabled}
+          onChange={(e) => setEnabled(e.target.checked)}
         />
       </label>
     </BaseNode>

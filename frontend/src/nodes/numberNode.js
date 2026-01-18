@@ -1,29 +1,27 @@
-// textNode.js
-
 import { useState } from 'react';
 import { Position } from 'reactflow';
 import { BaseNode } from './baseNode';
 
-export const TextNode = ({ id, data }) => {
-  const [currText, setCurrText] = useState(data?.text || '{{input}}');
+export const NumberNode = ({ id, data }) => {
+  const [value, setValue] = useState(data?.value || 0);
 
   return (
     <BaseNode
-      title="Text"
+      title="Number"
       handles={[
         {
           type: 'source',
           position: Position.Right,
-          id: `${id}-output`,
+          id: `${id}-number`,
         },
       ]}
     >
       <label>
-        Text:
+        Value:
         <input
-          type="text"
-          value={currText}
-          onChange={(e) => setCurrText(e.target.value)}
+          type="number"
+          value={value}
+          onChange={(e) => setValue(e.target.value)}
         />
       </label>
     </BaseNode>
