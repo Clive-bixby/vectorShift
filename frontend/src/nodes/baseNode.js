@@ -4,6 +4,7 @@ export const BaseNode = ({ title, handles = [], children }) => {
   return (
     <div
       style={{
+        position: 'relative', 
         width: 220,
         minHeight: 100,
         background: 'var(--bg-node)',
@@ -20,7 +21,9 @@ export const BaseNode = ({ title, handles = [], children }) => {
           type={handle.type}
           position={handle.position}
           id={handle.id}
+          isConnectable={true}  
           style={{
+            position: 'absolute',
             background: '#6366f1',
             width: 8,
             height: 8,
