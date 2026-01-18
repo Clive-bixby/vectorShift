@@ -21,16 +21,19 @@ export const OutputNode = ({ id, data }) => {
         },
       ]}
     >
-      <label>
+      <div className="node-field">
+        <label>
         Name:
         <input
           type="text"
           value={currName}
           onChange={(e) => setCurrName(e.target.value)}
         />
-      </label>
-
-      <label>
+        </label>
+      </div>
+      
+      <div className="node-field">
+        <label>
         Type:
         <select
           value={outputType}
@@ -39,7 +42,9 @@ export const OutputNode = ({ id, data }) => {
           <option value="Text">Text</option>
           <option value="File">Image</option>
         </select>
-      </label>
+        </label>
+      </div>
+      
     </BaseNode>
   );
 };

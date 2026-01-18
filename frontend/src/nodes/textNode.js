@@ -18,14 +18,17 @@ export const TextNode = ({ id, data }) => {
         },
       ]}
     >
-      <label>
+      <div className="node-field">
+        <label>
         Text:
         <input
           type="text"
           value={currText}
           onChange={(e) => setCurrText(e.target.value)}
         />
-      </label>
+        </label>
+      </div>
+      
     </BaseNode>
   );
 };
